@@ -1,0 +1,26 @@
+{
+  "name": "tsc-build",
+  "version": "2.0.0",
+  "description": "Execute tsc on the current project and references",
+  "bin": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "dev": "ts-node src/index.ts ./TestProject/dist/index.js --ts-config=TestProject/tsconfig.json --lint --lint-config=TestProject/.eslintrc.json --lint-ignore-path=TestProject/.eslintignore --lint-folder=TestProject/src"
+  },
+  "author": "Marcos Piñero",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node-emoji": "^1.8.2",
+    "@typescript-eslint/eslint-plugin": "^5.58.0",
+    "ts-node": "^10.9.1",
+    "eslint": "^8.38.0",
+    "typescript": "^5.0.2"
+  },
+  "dependencies": {
+    "chalk": "^5.2.0",
+    "chokidar": "^3.5.3",
+    "commander": "^9.4.1",
+    "node-emoji": "^1.11.0"
+  }
+}
