@@ -1,4 +1,4 @@
 export interface TSCOptions {
-    config_file_path: string;
+    project: string;
     only_references: boolean;
 }

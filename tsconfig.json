@@ -12,6 +12,7 @@
     "emitDecoratorMetadata": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
+    "allowSyntheticDefaultImports": true,
     "typeRoots": [
       "./node_modules/@types/"
     ]

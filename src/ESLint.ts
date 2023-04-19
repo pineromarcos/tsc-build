@@ -11,7 +11,7 @@ export class ESLint {
     this.logger = new Logger();
   }
 
-  public async run (options: CommandOptions): Promise<void> {
+  public async run (entrypoint: string, options: CommandOptions): Promise<void> {
     const esLintOptions: ESLintOptions = await this.getLintOptions(options);
     if (!esLintOptions.enabled) {
       this.logger.print('ESLint Disabled\n', 'dim');
@@ -22,7 +22,7 @@ export class ESLint {
     this.logger.print('ESLint running...', 'dim');
 
     return new Promise((resolve) => {
-      exec(`eslint ${esLintOptions.folder} --ignore-path ${esLintOptions.ignore_file_path} --config ${esLintOptions.config_file_path}`, (error, stdout, stderr) => {
+      exec(`eslint ${entrypoint} --ignore-path ${esLintOptions.ignore_file_path} --config ${esLintOptions.config_file_path}`, (error, stdout, stderr) => {
         this.logger.removeLastLine();
 
         if (!error) {
@@ -47,8 +47,7 @@ export class ESLint {
     return {
       enabled: options.lint,
       ignore_file_path: options.lintIgnorePath,
-      config_file_path: options.lintConfig,
-      folder: options.lintFolder,
+      config_file_path: options.lintConfig
     };
   }
 
