@@ -1,6 +1,6 @@
 {
   "name": "tsc-build",
-  "version": "2.0.8",
+  "version": "2.0.9",
   "description": "Execute tsc on the current project and references",
   "bin": "dist/index.js",
   "type": "module",

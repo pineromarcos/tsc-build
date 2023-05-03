@@ -9,6 +9,9 @@ export class Logger {
   }
 
   public removeLastLine (): void {
+    if (!process.stdout.isTTY) {
+      return;
+    }
     process.stdout.moveCursor(0, -1);
     process.stdout.clearScreenDown();
   }
